@@ -1,0 +1,42 @@
+[package]
+title = "USD-Based SceneUI Samples"
+repository="https://github.com/NVIDIA-Omniverse/kit-xr-samples"
+readme = "docs/README.md"
+preview_image = "data/preview.png"
+keywords = ["XR", "kit", "example"]
+icon = "data/icon.png"
+description = "A handful of samples using USD Scene UI appearing in the USD stage."
+changelog = "docs/CHANGELOG.md"
+category = "Example"
+authors = ["sharper"]
+
+[package.writeTarget]
+kit = true
+
+[core]
+reloadable = true
+
+[dependencies]
+# omni.kit.mainwindow is used to bring everything needed for UI application (replacement for omni.kit.uiapp)
+"omni.kit.mainwindow" = {}
+"omni.kit.viewport.registry" = {}
+"omni.kit.viewport.utility" = {}
+"omni.kit.widget.stage" = {}
+"omni.ui" = {}
+"omni.ui.scene" = {}
+"omni.kit.xr.scene_view.core" = {}
+"omni.kit.xr.scene_view.utils" = {}
+"omni.usd" = {}
+"omni.kit.property.transform" = {}
+"omni.kit.property.usd" = {}
+"omni.kit.window.file" = {}
+
+# Main python module this extension provides, it will be publicly available as "import omni.example.usdsceneui".
+[[python.module]]
+name = "omni.kit.xr.samples.usd_scene_ui"
+
+# dummy table to enable extension startup/shutdown test
+[[test]]
+dependencies = [
+    "omni.kit.ui_test" # UI testing extension
+]
