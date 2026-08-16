@@ -1,5 +1,5 @@
-omni.example.usd_scene_ui
-#############################
+omni.kit.xr.samples.usd_scene_ui
+################################
 
 Example creating a USD Scene UI
 
@@ -11,7 +11,7 @@ Example creating a USD Scene UI
    CHANGELOG
 
 
-.. automodule::"omni.example.usd_scene_ui"
+.. automodule:: omni.kit.xr.samples.usd_scene_ui
     :platform: Windows-x86_64, Linux-x86_64
     :members:
     :undoc-members:
