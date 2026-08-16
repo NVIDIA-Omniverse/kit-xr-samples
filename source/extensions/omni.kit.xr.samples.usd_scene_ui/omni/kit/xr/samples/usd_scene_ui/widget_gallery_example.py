@@ -101,6 +101,7 @@ class WidgetGalleryExample:
         self._parented_widget_container: Optional[UiContainer] = None
         self._rotatable_text_widget_container: Optional[UiContainer] = None
         self._rotatable_slider_widget_container: Optional[UiContainer] = None
+        self._show_generation = 0
 
         self._example_menu_item = XREditorMenuToggleItem(
             ext_id, WIDGET_GALLERY_EXAMPLE_MENU_PATH, self._toggle_example, value=False
@@ -123,6 +124,8 @@ class WidgetGalleryExample:
             self._hide()
 
     def _hide(self):
+        self._show_generation += 1
+
         if self._static_text_widget_container:
             self._static_text_widget_container.root.clear()
             self._static_text_widget_container = None
@@ -148,6 +151,8 @@ class WidgetGalleryExample:
             self._rotatable_slider_widget_container = None
 
     def _show(self):
+        self._show_generation += 1
+
         # 1. Place static "Simple Text" at the origin.
         static_text_widget_component = WidgetComponent(SimpleTextWidget, width=400, height=200)
 
@@ -187,9 +192,14 @@ class WidgetGalleryExample:
             "CreateMeshPrimWithDefaultXform", prim_type="Cube", object_origin=[400, 0, 0], select_new_prim=False
         )
 
+        current_generation = self._show_generation
+
         async def __wait_one_frame():
             # Wait one frame after creating the Cube as it is not ready.
             await omni.kit.app.get_app().next_update_async()
+
+            if self._show_generation != current_generation:
+                return
 
             parented_widget_component = WidgetComponent(
                 SimpleTextWidget, width=400, height=200, resolution_scale=2, widget_args=["Parented to Cube"]
