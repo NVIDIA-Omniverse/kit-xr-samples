@@ -79,13 +79,13 @@ class PrimMakerExampleUI(ui.Widget):
                             ui.Label("Position:")
                             with ui.HStack(spacing=4):
                                 ui.Label("X", width=0)
-                                ui.IntSlider(self._x_slider_model, min=-1000, max=1000)
+                                ui.FloatSlider(self._x_slider_model, min=-1000, max=1000)
                             with ui.HStack(spacing=4):
                                 ui.Label("Y", width=0)
-                                ui.IntSlider(self._y_slider_model, min=-1000, max=1000)
+                                ui.FloatSlider(self._y_slider_model, min=-1000, max=1000)
                             with ui.HStack(spacing=4):
                                 ui.Label("Z", width=0)
-                                ui.IntSlider(self._z_slider_model, min=-1000, max=1000)
+                                ui.FloatSlider(self._z_slider_model, min=-1000, max=1000)
                             ui.Spacer(height=2)
                             with ui.VStack(style={"margin": 1}):
                                 with ui.HStack():
