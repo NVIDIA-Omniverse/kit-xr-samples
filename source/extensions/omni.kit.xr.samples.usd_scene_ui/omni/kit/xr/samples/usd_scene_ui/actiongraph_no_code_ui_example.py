@@ -13,6 +13,7 @@ import asyncio
 import carb.events
 import omni.kit
 import omni.kit.window.file
+import omni.usd
 from omni.kit.xr.core import XREditorMenuToggleItem
 
 PRIM_TRANSFORM_EXAMPLE_MENU_PATH: str = "Examples/(XR UI) Action Graph No Code UI"
