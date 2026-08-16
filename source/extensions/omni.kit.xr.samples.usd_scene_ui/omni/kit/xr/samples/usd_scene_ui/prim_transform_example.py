@@ -161,6 +161,7 @@ class PrimTransformExample:
 
         if self._stage_event_delegate:
             self._stage_event_delegate.unsubscribe()
+            self._stage_event_delegate = None
 
         if self._widget_container:
             self._widget_container.root.clear()
