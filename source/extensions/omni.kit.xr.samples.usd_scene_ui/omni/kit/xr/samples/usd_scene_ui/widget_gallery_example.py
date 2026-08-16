@@ -212,7 +212,7 @@ class WidgetGalleryExample:
             SimpleTextWidget, width=400, height=200, resolution_scale=2, widget_args=["Slide to rotate"]
         )
 
-        self._rotation_source = SpatialSource.new_rotation_source(Gf.Vec3d(0, 45, 0))
+        self._rotation_source = SpatialSource.new_rotation_source(Gf.Vec3d(0, math.radians(45), 0))
         self._rotatable_text_widget_container = UiContainer(
             rotatable_text_widget_component,
             space_stack=[SpatialSource.new_translation_source(Gf.Vec3d(-600, 350, 0)), self._rotation_source],
