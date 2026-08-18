@@ -59,7 +59,9 @@ class XRSceneViewExampleExtension(omni.ext.IExt):
             self._prim_transform_example.destroy()
             self._prim_transform_example = None
 
-        self._prim_maker_example = None
+        if self._prim_maker_example:
+            self._prim_maker_example.destroy()
+            self._prim_maker_example = None
 
         if self._ag_no_code_ui_example:
             self._ag_no_code_ui_example.destroy()
